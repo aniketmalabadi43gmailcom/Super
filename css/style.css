@@ -1,0 +1,342 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background: #000; /* Black */
+  border-bottom: 1px solid #222;
+}
+header h2 {
+  color: #d4af37; /* Gold */
+  font-weight: 700;
+}
+.nav .nav-link {
+  color: #fff !important;  /* White text */
+  font-weight: 500;
+  margin: 0 8px;
+  transition: 0.3s;
+}
+.nav .nav-link:hover,
+.nav .nav-link.active {
+  color: #d4af37 !important; /* Gold on hover */
+}
+
+
+/* SLIDER */
+.carousel-item img {
+  height: 80vh;
+  object-fit: cover;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #d4af37;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+/* CLINIC INFO */
+.clinic-info {
+  background: #fff;
+}
+.clinic-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+}
+.clinic-doctor {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Buttons */
+.btn-book {
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 35px;
+  padding: 12px 30px;
+  background: #d4af37;
+  color: #000;
+  border: none;
+  transition: 0.3s;
+}
+.btn-book:hover {
+  background: #b8912f;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.btn-submit {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 10px;
+  transition: 0.3s;
+}
+.btn-submit:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 15px;
+  border: 1px solid #d4af37;
+  background: #fff;
+}
+.modal-title {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #000;
+}
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+.form-control:focus {
+  border-color: #d4af37;
+  box-shadow: none;
+}
+.note {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* FOOTER */
+.footer {
+  background: #000; /* Black */
+  color: #ccc;
+  padding: 40px 20px;
+  border-top: 1px solid #222;
+}
+.footer h5 {
+  color: #d4af37; /* Gold */
+  font-weight: 600;
+}
+.footer a {
+  color: #d4af37;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+.footer a:hover {
+  color: #fff;
+}
+.footer p {
+  color: #aaa;
+}
+/* About Section */
+.about-section {
+  background: #111; /* black matte */
+  color: #ddd;
+}
+.about-section .section-title {
+  color: #d4af37; /* gold */
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.about-section .section-title span {
+  color: #fff;
+}
+.about-section p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.about-list {
+  list-style: none;
+  padding: 0;
+}
+.about-list li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.about-list i {
+  color: #d4af37;
+  margin-right: 8px;
+}
+/* Services Section */
+.services-section {
+  background: #111; /* Matte black */
+  color: #ddd;
+}
+.services-section .section-title {
+  color: #d4af37;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.services-section .section-title span {
+  color: #fff;
+}
+.section-subtitle {
+  color: #aaa;
+  font-size: 16px;
+}
+
+/* Service Cards */
+.service-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  transition: 0.3s;
+  height: 100%;
+}
+.service-card i {
+  color: #d4af37;
+}
+.service-card h5 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.service-card p {
+  color: #bbb;
+  font-size: 14px;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.5);
+  background: #222;
+}
+/* Gallery */
+.gallery-section {
+  background: #111;
+  color: #ddd;
+}
+.gallery-section .section-title {
+  color: #d4af37;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.gallery-section .section-title span {
+  color: #fff;
+}
+.section-subtitle {
+  color: #aaa;
+  font-size: 16px;
+}
+.gallery-img {
+  transition: 0.4s;
+  border: 3px solid #1f1f1f;
+}
+.gallery-img:hover {
+  transform: scale(1.05);
+  border-color: #d4af37;
+}
+/* Testimonials Section */
+.testimonials-section {
+  background: #111;
+  color: #ddd;
+}
+.testimonials-section .section-title {
+  color: #d4af37;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.testimonials-section .section-title span {
+  color: #fff;
+}
+.section-subtitle {
+  color: #aaa;
+  font-size: 16px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background: #111;
+  color: #fff; /* Make all text default white */
+}
+.testimonials-section .section-title {
+  color: #d4af37;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.testimonials-section .section-title span {
+  color: #fff;
+}
+.section-subtitle {
+  color: #ddd; /* lighter gray subtitle */
+  font-size: 16px;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  max-width: 600px;
+  transition: 0.3s;
+}
+.testimonial-card:hover {
+  background: #222;
+}
+.testimonial-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d4af37;
+}
+.testimonial-card h5 {
+  color: #d4af37; /* gold name */
+  margin-bottom: 10px;
+}
+.testimonial-card p {
+  font-size: 15px;
+  color: #fff;   /* review text now pure white */
+  font-style: italic;
+}
+.stars {
+  color: #d4af37;
+  font-size: 18px;
+  margin-top: 8px;
+}
+/* Force testimonial text to white */
+.testimonial-card p,
+.testimonial-card .text-muted {
+  color: #fff !important;  /* override bootstrap gray */
+}
+
+/* Optional: also make carousel indicators/controls gold */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(81%) sepia(64%) saturate(415%) hue-rotate(17deg) brightness(94%) contrast(93%);
+}
+/* Contact Hero */
+.contact-hero {
+  background: linear-gradient(160deg, #000 40%, #222 100%);
+  color: #fff;
+}
+.contact-hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.contact-hero p { color: #ccc; font-size: 1.1rem; }
+
+/* Highlighted text */
+.text-gold { color: #d4af37 !important; }
+
+/* Quick Links Box */
+.bg-secondary {
+  background: #1a1a1a !important;
+}
+
+/* Gold Button */
+.btn-gold {
+  background: #d4af37;
+  color: #000;
+  border-radius: 30px;
+  font-weight: 600;
+}
+.btn-gold:hover {
+  background: #b8912f;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
