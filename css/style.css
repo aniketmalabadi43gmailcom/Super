@@ -29,6 +29,89 @@ header h2 {
 .nav .nav-link.active {
   color: #d4af37 !important; /* Gold on hover */
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  padding: 0.8rem 1rem;
+  align-items: center;
+}
+
+.navbar-brand img {
+  max-height: 50px; /* keeps logo size consistent */
+}
+/* Ensure site name text is same size everywhere */
+.navbar-brand-text {
+  font-size: 2rem;         /* consistent size */
+  font-weight: 700;
+  color: #d4af37;          /* gold */
+  margin: 0;
+  line-height: 1.2;
+}
+/* Force uniform navbar height */
+.navbar {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    min-height: 80px; /* same height across all pages */
+}
+
+/* Fix body margin so content doesn't push navbar */
+body {
+    margin: 0;
+    padding: 0;
+}
+header.fixed-top {
+  height: 100px;              /* fixed height for header */
+  background: #000;           /* make sure bg is consistent */
+}
+
+header.fixed-top img {
+  height: 80px;               /* keep logo consistent */
+}
+
+header.fixed-top h2 {
+  font-size: 28px;            /* same text size everywhere */
+  line-height: 1;             /* prevent extra spacing */
+}
+body {
+  padding-top: 100px; /* move all page content down */
+}
+.section-title {
+  font-size: 2rem;         /* adjust size */
+  font-weight: bold;
+  color: #fff;             /* default (white) */
+}
+
+.section-title span {
+  color: #d4af37;          /* gold color */
+}
+
+
+/* Navbar */
+.navbar {
+  padding: 0.6rem 1rem;
+}
+.navbar-nav {
+  flex-direction: row; /* keep items in one line */
+}
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap; /* prevent breaking */
+}
+.navbar-nav .nav-link:hover {
+  color: #d4af37 !important;
+}
+
+/* Use full width instead of Bootstrap's default container */
+.container-fluid {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 
 
 /* SLIDER */
@@ -116,26 +199,157 @@ header h2 {
 
 /* FOOTER */
 .footer {
-  background: #000; /* Black */
-  color: #ccc;
+  background: #000;
+  color: #fff;
   padding: 40px 20px;
   border-top: 1px solid #222;
 }
-.footer h5 {
-  color: #d4af37; /* Gold */
-  font-weight: 600;
-}
-.footer a {
-  color: #d4af37;
-  margin-right: 12px;
-  transition: 0.3s;
-}
-.footer a:hover {
+
+.footer h5,
+.footer h6 {
   color: #fff;
 }
+
 .footer p {
   color: #aaa;
 }
+
+.footer a {
+  color: #fff;
+  margin-right: 12px;
+  transition: color 0.3s;
+}
+.footer a:hover {
+  color: #d4af37;
+}
+
+.text-gold {
+  color: #d4af37 !important;
+}
+
+/* FOOTER */
+.footer {
+  background: #000; /* pure black background */
+  color: #fff;
+  padding: 40px 20px;
+  border-top: 1px solid #222;
+  font-family: Arial, sans-serif;
+}
+
+/* Gold accent */
+.footer .text-gold {
+  color: #d4af37 !important;
+}
+
+/* Social Media Links */
+.footer a {
+  color: #fff;
+  margin-right: 12px;
+  transition: color 0.3s;
+}
+.footer a:hover {
+  color: #d4af37;
+}
+
+/* Layout */
+.footer .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left (Social) */
+.footer-left {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Center (Impact Counters) */
+.footer-center {
+  flex: 2;
+  text-align: center;
+}
+.footer .impact-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+.footer .impact-card {
+  background: #111; /* slightly lighter than footer */
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 20px 25px;
+  min-width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.footer .impact-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+.footer .impact-card h3 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #d4af37;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.footer .impact-card h3 span:last-child {
+  font-size: 1.2rem; /* smaller + sign */
+  margin-left: 2px;
+}
+.footer .impact-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+/* Right (Address) */
+.footer-right {
+  flex: 1;
+  text-align: right;
+  min-width: 200px;
+}
+.footer-right p {
+  margin: 0 0 5px;
+}
+
+/* Divider */
+.footer hr {
+  border-color: #333;
+}
+
+/* Copyright */
+.footer .small {
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer .container-fluid {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-left, 
+  .footer-center, 
+  .footer-right {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .footer-right {
+    text-align: center;
+  }
+  .footer .impact-boxes {
+    flex-wrap: wrap; /* allow wrapping on smaller screens */
+    gap: 20px;
+  }
+}
+
+
 /* About Section */
 .about-section {
   background: #111; /* black matte */
@@ -325,18 +539,100 @@ header h2 {
 .bg-secondary {
   background: #1a1a1a !important;
 }
+/* Doctor Card */
+.doctor-card {
+  background-color: #1a1a1a; /* matches theme */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+}
 
-/* Gold Button */
-.btn-gold {
-  background: #d4af37;
-  color: #000;
-  border-radius: 30px;
+/* Hover Effect */
+.doctor-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+  background-color: #222;
+}
+
+/* Doctor Image */
+.doctor-card img {
+  height: 300px;             /* vertical rectangle */
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.doctor-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Consultation Modal Theme */
+.modal-content {
+  background: #111; /* match site bg */
+  color: #fff;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.modal-header {
+  border-bottom: 1px solid #222;
+}
+
+.modal-title {
+  color: #f5c542; /* gold title */
   font-weight: 600;
 }
-.btn-gold:hover {
-  background: #b8912f;
-  color: #fff;
-  transform: translateY(-2px);
+
+.btn-submit {
+  background: #f5c542;
+  color: #111;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-submit:hover {
+  background: #e6b800; /* darker gold */
 }
 
+.form-control {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+}
+.form-control:focus {
+  border-color: #f5c542;
+  box-shadow: none;
+}
+/* Make modal tighter vertically */
+.modal-dialog {
+  max-width: 600px;   /* wider */
+  margin: 1.75rem auto;  /* keep it centered */
+}
+
+.modal-content {
+  background: #0d0d0d;
+  color: #fff;
+  border-radius: 25px;
+  border: 1px solid #222;
+  box-shadow: 0px 6px 25px rgba(0,0,0,0.8);
+  padding: 15px 25px;   /* reduced padding */
+}
+
+/* Remove extra space in header & body */
+.modal-header {
+  border-bottom: 1px solid #222;
+  border-radius: 25px 25px 0 0;
+  background: #111;
+  padding: 10px 15px;   /* reduced */
+}
+
+.modal-body {
+  padding: 10px 10px;   /* less vertical space */
+}
+
+.modal-footer {
+  padding: 10px 10px;   /* if you ever add footer buttons */
+}
 
