@@ -8,30 +8,6 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
   <script src="js/include.js" defer></script>
-  <style>
-    /* Gold Button */
-    .btn-gold {
-      background: #d4af37;
-      color: #000;
-      font-weight: bold;
-      border-radius: 50px;
-      padding: 10px 25px;
-      transition: all 0.3s ease;
-    }
-    .btn-gold:hover {
-      background: #b9962e;
-      color: #fff;
-    }
-
-    /* Iframe */
-    .consult-iframe {
-      width: 100%;
-      min-height: 600px;
-      border: none;
-      border-radius: 20px;
-      box-shadow: 0px 6px 20px rgba(0,0,0,0.5);
-    }
-  </style>
 </head>
 <body>
 
@@ -73,16 +49,12 @@
         <p><strong>Phone:</strong> +91 99999 99999</p>
         <p><strong>Email:</strong> <a href="mailto:info@super32.com">info@super32.com</a></p>
 
-        <!-- Gold button -->
-        <a href="#consultForm" class="btn btn-gold mt-3 mb-4">
-          <i class="fa fa-calendar-check"></i> Book a Free Consultation
-        </a>
+        <!-- SAME BUTTON AS HOME PAGE -->
+        <button class="btn btn-book mt-3 mb-4" data-bs-toggle="modal" data-bs-target="#consultModal">
+          <i class="fa fa-calendar-check"></i> Book a FREE Consultation
+        </button>
 
-        <!-- Embedded Systeme.io Form -->
-        <iframe id="consultForm" class="consult-iframe" 
-          src="https://crickid18.systeme.io/19c0b949">
-        </iframe>
-
+        <!-- Google Map -->
         <div class="ratio ratio-16x9 mt-5">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.586382868131!2d73.80128359999999!3d18.5926771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e6319a894f%3A0xe6e84716b5608b16!2sSuper32%20Dental%20Studio!5e0!3m2!1sen!2sin!4v1755438033846!5m2!1sen!2sin" 
           width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -90,6 +62,39 @@
       </div>
     </div>
   </main>
+
+  <!-- CONSULTATION MODAL (Copied from Home page) -->
+  <div class="modal fade" id="consultModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title">Book a FREE Consultation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="consultForm" novalidate>
+            <!-- Name -->
+            <div class="mb-3">
+              <input type="text" id="fullName" class="form-control" placeholder="Full Name" required>
+              <div class="error-message text-danger small"></div>
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+              <input type="email" id="email" class="form-control" placeholder="Email Address" required>
+              <div class="error-message text-danger small"></div>
+            </div>
+            <!-- Phone -->
+            <div class="mb-3">
+              <input type="tel" id="phoneNumber" class="form-control" placeholder="WhatsApp Number" required>
+              <div class="error-message text-danger small"></div>
+            </div>
+            <button type="submit" class="btn btn-submit w-100">Submit</button>
+          </form>
+          <p class="note mt-2 text-center">We hate spam. Your data is 100% secure</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer py-5">
@@ -135,7 +140,53 @@
     <div class="text-center small">&copy; 2025 Super32 Dental Studio. All Rights Reserved.</div>
   </footer>
 
-  <script src="js/counter.js"></script>
+  <!-- Scripts (same as home page) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+  <script src="js/counter.js"></script>
+
+  <script>
+    const phoneInput = document.querySelector("#phoneNumber");
+    const iti = window.intlTelInput(phoneInput, {
+      initialCountry: "in",
+      separateDialCode: true,
+      preferredCountries: ["in", "us", "gb"],
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+    });
+
+    document.getElementById("consultForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let valid = true;
+      document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+
+      // Name validation
+      const name = document.getElementById("fullName").value.trim();
+      if (!/^[A-Za-z\s]+$/.test(name)) {
+        document.querySelector("#fullName + .error-message").textContent = "Please enter letters only for your name.";
+        valid = false;
+      }
+
+      // Email validation
+      const email = document.getElementById("email").value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+      if (!emailPattern.test(email)) {
+        document.querySelector("#email + .error-message").textContent = "Please enter a valid email address.";
+        valid = false;
+      }
+
+      // Phone validation
+      if (!iti.isValidNumber()) {
+        document.querySelector("#phoneNumber").parentNode.querySelector(".error-message").textContent =
+          "Please enter a valid phone number.";
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Form submitted successfully!");
+        e.target.submit();
+      }
+    });
+  </script>
 </body>
 </html>
